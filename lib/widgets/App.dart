@@ -32,7 +32,7 @@ class MyHomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               DisplacedButton(
-                text: "Random button",
+                text: "Displaced button",
                 style: ButtonStyle(
                     backgroundColor: Colors.amber, textColor: Colors.white),
               )

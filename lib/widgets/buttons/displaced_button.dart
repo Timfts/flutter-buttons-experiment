@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:buttons_experiment/classes/button_style.dart';
 
+/// objectives
+/// add touch animation
+/// add loading state
+
 class DisplacedButton extends StatelessWidget {
   final ButtonStyle style;
   final String text;
@@ -23,16 +27,26 @@ class DisplacedButton extends StatelessWidget {
               child: Container(color: Colors.red),
             ),
           ),
-          Container(
-            child: Text(
-              this.text,
-              style: TextStyle(
-                  color: this.style.textColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20),
+          Material(
+            color: Colors.transparent,
+            elevation: 0,
+            child: InkWell(
+              onTap: () => print("cenoura"),
+              onLongPress: () =>  print("long press"),
+              child: Container(
+                child: Text(
+                  this.text,
+                  style: TextStyle(
+                    color: this.style.textColor,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                decoration: BoxDecoration(border: Border.all(width: 2)),
+              ),
             ),
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-            decoration: BoxDecoration(border: Border.all(width: 2)),
           ),
         ],
       ),
